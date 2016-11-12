@@ -23,6 +23,7 @@ char **ft_strsplit(char const *s, char c)
 	i = 0;
 	nb_w = 0;
 	j = 0;
+	/*
 	while (s[i])
 	{
 		while (s[i] == c)
@@ -32,6 +33,16 @@ char **ft_strsplit(char const *s, char c)
 		while (s[i] != '\0' && s[i] != c)
 			i++;
 	}
+	*/
+
+	while (s[i])
+	{
+		if(s[i] == c && s[i + 1] != c && s[i + 1])
+			nb_w++;
+		i++;
+	}
+
+
 	i = 0;
 	tab = (char**)malloc(sizeof(char*) * nb_w+1);
 	if (tab == NULL)

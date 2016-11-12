@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 14:44:59 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/09 15:32:15 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/10 16:41:25 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,24 @@ int main(void)
 		TEST(1, "OK");
 	}
 	else
+		TEST(1, "FALSE : diff :()");
+	if (str != res_orig)
 	{
-		TEST(1, "FALSE");
+		TEST(2, "OK");
+	}
+	else
+		TEST(2, "FALSE : adress are the same");
+
+	res_orig = strdup("");
+	res = ft_strdup("");
+
+	if (*res_orig == *res)
+	{
+		TEST(3, "OK");
+	}
+	else
+	{
+		TEST(3, "FALSE : bad return with empty string !")
 	}
 	return (0);
 }
