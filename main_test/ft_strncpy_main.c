@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 19:42:15 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/12 13:26:21 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/12 13:35:08 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main(void)
 	char *str;
 	char *dest;
 	char *dest_orig;
+
 
 	printf("<-----ft_strncpy----->\n");
 	str = (char *)malloc(sizeof(char) * 100);
@@ -162,5 +163,8 @@ int main(void)
 	else
 		TEST(7, "FALSE : if n == 0 diff :(");
 
+	//----------------- test 8 if dest ret is ok 
+
+	
 	return (0);
 }
