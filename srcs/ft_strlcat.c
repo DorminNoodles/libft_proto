@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 11:25:41 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/13 16:46:35 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/16 18:27:54 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,14 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t i;
 
-	i = 0;
-	while (*dst)
+	i = strlen(dst);
+	dst += i;
+	while (i < size)
 	{
-		dst++;
-		i++;
-	}
-	while (*src)
-	{
-		if (i < size - 1)
-		{
-			*dst = *src;
-			dst++;
-		}
+		*(dst++) = *src;
 		src++;
 		i++;
 	}
-	*dst = '\0';
+	*dst  = '\0';
 	return (i);
 }

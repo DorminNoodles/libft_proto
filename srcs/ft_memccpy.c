@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 13:30:31 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/13 16:28:05 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/14 15:00:28 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	{
 		*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
 		if (*(unsigned char *)(dest + i) == (unsigned char)c)
-			return (dest + 1);
+			return (dest + i + 1);
 		i++;
 	}
 	return (NULL);

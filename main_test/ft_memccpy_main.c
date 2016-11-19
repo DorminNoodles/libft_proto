@@ -23,6 +23,7 @@ int main(void)
 	char *ret_orig;
 	char *ret2;
 	char *ret_orig2;
+	char c;
 	int i;
 
 	printf("<-----ft_memccpy----->\n");
@@ -73,7 +74,6 @@ int main(void)
 	
 	ret_orig2 = memccpy(dest_orig, "ma", 'z', 2);
 	ret2 = ft_memccpy(dest, "ma", 'z', 2);
-	
 	i = 0;
 	while (dest[i] == dest_orig[i] && i < 90)
 		i++;
@@ -90,5 +90,160 @@ int main(void)
 	}
 	else
 		TEST(2, "FALSE : error ! bad return");
+	
+
+	//--------------------------test 3 return diff
+	src = (char *)malloc(100);
+		MALLOC_CHECK(src);
+	dest = (char *)malloc(100);
+		MALLOC_CHECK(dest);
+	dest_orig = (char *)malloc(100);
+		MALLOC_CHECK(dest_orig);
+	memcpy((void *)src, "abcdef\0", strlen("abcdef\0") + 1);
+	memcpy((void *)dest, "012345678", strlen("012345678"));
+	memcpy((void *)dest_orig, "012345678", strlen("012345678"));
+	c = 'e';
+
+	ret_orig = memccpy(dest_orig, src, c, 7);
+	ret = ft_memccpy(dest, src, c, 7);
+
+	printf("orig : %s\n", ret_orig);
+	printf("mut : %s\n", ret);
+
+	if(memcmp(ret, ret_orig, 3) == 0)
+	{
+		TEST(3, "OK");
+	}
+	else
+		TEST(3, "FALSE : return diff :(");
+
+	//---------------------------test 4
+	memcpy((void *)src, "abcdef\0", strlen("abcdef\0") + 1);
+	memcpy((void *)dest, "012345678", strlen("012345678"));
+	memcpy((void *)dest_orig, "012345678", strlen("012345678"));
+	
+	memccpy(dest_orig, src, c, 6);
+	ft_memccpy(dest, src, c, 6);
+	
+	printf("orig : %s\n", dest_orig);
+	printf("mut : %s\n", dest);
+
+	if(memcmp(dest, dest_orig, 9) == 0)
+	{
+		TEST(4, "OK");
+	}
+	else
+		TEST(4, "FALSE : diff in dest ptr :(");
+
+	//-----------------------test 5 dest + n = 0
+	memcpy((void *)src, "abcdef\0", strlen("abcdef\0") + 1);
+	memcpy((void *)dest, "012345678", strlen("012345678"));
+	memcpy((void *)dest_orig, "012345678", strlen("012345678"));
+
+	memccpy(dest_orig, src, c, 0);
+	ft_memccpy(dest, src, c, 0);
+
+	printf("orig : %s\n", dest_orig);
+	printf("mut : %s\n", dest);
+
+	if(memcmp(dest, dest_orig, 9) == 0)
+	{
+		TEST(5, "OK");
+	}
+	else
+		TEST(5, "FALSE : diff in dest ptr (n = 0) :(");
+
+	//-------------------test 6 dest + src empty
+	memcpy((void *)dest, "012345678", strlen("012345678"));
+	memcpy((void *)dest_orig, "012345678", strlen("012345678"));
+
+	memccpy(dest_orig, "", c, 5);
+	ft_memccpy(dest, "", c, 5);
+
+	printf("orig : %s\n", dest_orig);
+	printf("mut : %s\n", dest);
+
+	if(memcmp(dest, dest_orig, 1) == 0)
+	{
+		TEST(6, "OK");
+	}
+	else
+		TEST(6, "FALSE : diff in dest ptr (src empty) :(");
+
+	//------------------test 7 dest char doesn t exist
+	memcpy((void *)src, "abcdef\0", strlen("abcdef\0") + 1);
+	memcpy((void *)dest, "012345678", strlen("012345678"));
+	memcpy((void *)dest_orig, "012345678", strlen("012345678"));
+	c = 'g';
+
+	memccpy(dest_orig, src, c, 5);
+	ft_memccpy(dest, src, c, 5);
+
+	printf("orig : %s\n", dest_orig);
+	printf("mut : %s\n", dest);
+
+	if(memcmp(dest, dest_orig, 1) == 0)
+	{
+		TEST(7, "OK");
+	}
+	else
+		TEST(7, "FALSE : diff in dest ptr (char c doesn't exist') :(");
+
+	//--------------------test 8 ret + n = 0
+	memcpy((void *)src, "abcdef\0", strlen("abcdef\0") + 1);
+	memcpy((void *)dest, "012345678", strlen("012345678"));
+	memcpy((void *)dest_orig, "012345678", strlen("012345678"));
+	c = 'm';
+
+	ret_orig = memccpy(dest_orig, src, c, 0);
+	ret = ft_memccpy(dest, src, c, 0);
+
+	printf("orig : %s\n", ret_orig);
+	printf("mut : %s\n", ret);
+
+	if(ret == ret_orig)
+	{
+		TEST(8, "OK");
+	}
+	else
+		TEST(8, "FALSE : diff in dest ptr (char c doesn't exist') :(");
+
+	//-------------------test 9 ret + empty src
+	memcpy((void *)dest, "012345678", strlen("012345678"));
+	memcpy((void *)dest_orig, "012345678", strlen("012345678"));
+	c = 'm';
+
+	ret_orig = memccpy(dest_orig, "", c, 3);
+	ret = ft_memccpy(dest, "", c, 3);
+
+	printf("orig : %s\n", ret_orig);
+	printf("mut : %s\n", ret);
+
+	if(ret == ret_orig)
+	{
+		TEST(9, "OK");
+	}
+	else
+		TEST(9, "FALSE : diff in dest ptr (char c doesn't exist') :(");
+
+	//-----------------test 10 oversomething
+	memcpy((void *)src, "abcdef\0", strlen("abcdef\0") + 1);
+	memcpy((void *)dest, "012345678", strlen("012345678"));
+	memcpy((void *)dest_orig, "012345678", strlen("012345678"));
+	c = 'm';
+
+	ret_orig = memccpy(dest_orig, "", c, 50);
+	ret = ft_memccpy(dest, "", c, 50);
+
+	printf("orig : %s\n", ret_orig);
+	printf("mut : %s\n", ret);
+
+	if(memcmp(dest, dest_orig, 1) == 0)
+	{
+		TEST(10, "OK");
+	}
+	else
+		TEST(10, "FALSE : n == 50 bad diff :(");
+
 	return (0);
 }

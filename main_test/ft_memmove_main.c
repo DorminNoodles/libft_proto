@@ -73,7 +73,21 @@ int main(void)
 
 	memmove(dest_orig, src_orig, 17);
 	ft_memmove(dest, src, 17);
-	
+
+	i = 0;
+	while (i < 20)
+	{
+		write(1, &dest_orig[i], 1);
+		i++;
+	}
+	printf("\n");
+	i = 0;
+	while (i < 20)
+	{
+		write(1, &dest[i], 1);
+		i++;
+	}
+	printf("\n");
 	i = 0;
 	while(i < 20 && dest[i] == dest_orig[i])
 		i++;
@@ -85,5 +99,22 @@ int main(void)
 	{
 		TEST(3, "FALSE : \\0");
 	}
+	
+	//-------------------------test 4
+	dest = (char *)malloc(100);
+		MALLOC_CHECK(dest);
+	dest_orig = (char *)malloc(100);
+		MALLOC_CHECK(dest_orig);
+	memcpy((void *)dest, "0123456789abcdef", strlen("0123456789abcdef"));
+	memcpy((void *)dest_orig, "0123456789abcdef", strlen("0123456789abcdef"));
+	src = dest + strlen("0123456789");
+	src_orig = dest + strlen("0123456789");
+	memmove(dest_orig, src_orig, 5);
+	ft_memmove(dest, src, 5);
+
+	printf("orig : %s\n", dest_orig);
+	printf("mut : %s\n", dest);
+	
+	
 	return (0);
 }

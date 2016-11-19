@@ -93,7 +93,7 @@ int main(void)
 	/*First_Part*/
 	//test_ft_strlen();
 	//test_ft_atoi();
-	test_ft_memset();
+	//test_ft_memset();
 	//test_ft_bzero();
 	//test_ft_memccpy();
 	//test_ft_memcpy();
@@ -317,6 +317,7 @@ void test_ft_atoi(void)
 	char *nstr4 = "    -+484228     eerrf";
 	char *nstr5 = "    -484228     eerrf";
 	char *nstr6 = "    +484228     eerrf";
+	char *nstr7 = "	   	#484228  ewregdh";
 	int x;
 
 	x = 0;
