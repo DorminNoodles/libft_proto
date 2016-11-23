@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 00:46:52 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/13 11:11:00 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/20 14:38:33 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ void	*ft_memalloc(size_t size)
 
 	i = 0;
 	ptr = (char *)malloc(size);
-	if (ptr == NULL)
-		return (NULL);
+		MALLOC_CTRL(ptr);
 	while (i < size)
 	{
 		*(ptr + i) = 0;

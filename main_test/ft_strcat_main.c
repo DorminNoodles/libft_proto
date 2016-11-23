@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 13:30:04 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/12 16:36:50 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/22 19:04:38 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,6 @@ int main(void)
 
 	ft_strcat(str1, str2);
 	strcat(str1_orig, str2_orig);
-
-	//printf("%s\n", str1);
-	//printf("%s\n", str1_orig);
-
-	/*
-	while (i < 16)
-	{
-		printf("%d   %d\n", str1[i], str1_orig[i]);
-		i++;
-	}
-	*/
 
 	if (memcmp(str1, str1_orig, 11) == 0)
 	{

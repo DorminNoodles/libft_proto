@@ -77,7 +77,7 @@ int main(void)
 	i = 0;
 	while (dest[i] == dest_orig[i] && i < 90)
 		i++;
-	if(i == 90)
+	if(memcmp(dest_orig, dest, 90) == 0)
 	{
 		TEST(1, "OK")
 	}
@@ -107,8 +107,8 @@ int main(void)
 	ret_orig = memccpy(dest_orig, src, c, 7);
 	ret = ft_memccpy(dest, src, c, 7);
 
-	printf("orig : %s\n", ret_orig);
-	printf("mut : %s\n", ret);
+	//printf("orig : %s\n", ret_orig);
+	//printf("mut : %s\n", ret);
 
 	if(memcmp(ret, ret_orig, 3) == 0)
 	{
@@ -125,8 +125,8 @@ int main(void)
 	memccpy(dest_orig, src, c, 6);
 	ft_memccpy(dest, src, c, 6);
 	
-	printf("orig : %s\n", dest_orig);
-	printf("mut : %s\n", dest);
+	//printf("orig : %s\n", dest_orig);
+	//printf("mut : %s\n", dest);
 
 	if(memcmp(dest, dest_orig, 9) == 0)
 	{
@@ -143,8 +143,8 @@ int main(void)
 	memccpy(dest_orig, src, c, 0);
 	ft_memccpy(dest, src, c, 0);
 
-	printf("orig : %s\n", dest_orig);
-	printf("mut : %s\n", dest);
+	//printf("orig : %s\n", dest_orig);
+	//printf("mut : %s\n", dest);
 
 	if(memcmp(dest, dest_orig, 9) == 0)
 	{
@@ -160,8 +160,8 @@ int main(void)
 	memccpy(dest_orig, "", c, 5);
 	ft_memccpy(dest, "", c, 5);
 
-	printf("orig : %s\n", dest_orig);
-	printf("mut : %s\n", dest);
+	//printf("orig : %s\n", dest_orig);
+	//printf("mut : %s\n", dest);
 
 	if(memcmp(dest, dest_orig, 1) == 0)
 	{
@@ -179,8 +179,8 @@ int main(void)
 	memccpy(dest_orig, src, c, 5);
 	ft_memccpy(dest, src, c, 5);
 
-	printf("orig : %s\n", dest_orig);
-	printf("mut : %s\n", dest);
+	//printf("orig : %s\n", dest_orig);
+	//printf("mut : %s\n", dest);
 
 	if(memcmp(dest, dest_orig, 1) == 0)
 	{
@@ -198,8 +198,8 @@ int main(void)
 	ret_orig = memccpy(dest_orig, src, c, 0);
 	ret = ft_memccpy(dest, src, c, 0);
 
-	printf("orig : %s\n", ret_orig);
-	printf("mut : %s\n", ret);
+	//printf("orig : %s\n", ret_orig);
+	//printf("mut : %s\n", ret);
 
 	if(ret == ret_orig)
 	{
@@ -216,15 +216,15 @@ int main(void)
 	ret_orig = memccpy(dest_orig, "", c, 3);
 	ret = ft_memccpy(dest, "", c, 3);
 
-	printf("orig : %s\n", ret_orig);
-	printf("mut : %s\n", ret);
+	//printf("orig : %s\n", ret_orig);
+	//printf("mut : %s\n", ret);
 
 	if(ret == ret_orig)
 	{
 		TEST(9, "OK");
 	}
 	else
-		TEST(9, "FALSE : diff in dest ptr (char c doesn't exist') :(");
+		TEST(9, "FALSE : bad diff in ret with empty src :(");
 
 	//-----------------test 10 oversomething
 	memcpy((void *)src, "abcdef\0", strlen("abcdef\0") + 1);
@@ -235,15 +235,32 @@ int main(void)
 	ret_orig = memccpy(dest_orig, "", c, 50);
 	ret = ft_memccpy(dest, "", c, 50);
 
-	printf("orig : %s\n", ret_orig);
-	printf("mut : %s\n", ret);
+	//printf("orig : %s\n", ret_orig);
+	//printf("mut : %s\n", ret);
 
 	if(memcmp(dest, dest_orig, 1) == 0)
 	{
 		TEST(10, "OK");
 	}
 	else
-		TEST(10, "FALSE : n == 50 bad diff :(");
+		TEST(10, "FALSE : src null bad diff :(");
+
+	//-----------------test 11 c = NULL
+	//printf("###############\n");
+	memcpy((void *)src, "ab\0defghijklmnop\0", strlen("ab\0defghijklmnop") + 1);
+	memcpy((void *)dest, "012345678", strlen("012345678"));
+	memcpy((void *)dest_orig, "012345678", strlen("012345678"));
+	c = 'm';
+
+	ret_orig = memccpy(dest_orig, src, 0, 20);
+	ret = ft_memccpy(dest, src, 0, 20);
+	
+	if(memcmp(dest, dest_orig, 1) == 0)
+	{
+		TEST(11, "OK");
+	}
+	else
+		TEST(11, "FALSE : src null bad diff :(");
 
 	return (0);
 }

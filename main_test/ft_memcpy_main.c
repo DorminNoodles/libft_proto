@@ -25,29 +25,40 @@ int main(void)
 	MALLOC_CHECK(str);
 	str_orig = malloc(70);
 	MALLOC_CHECK(str_orig);
+	//--------------test 1 simple diff
+	ft_memcpy((void *)str, "blobmobile !", strlen("blobmobile !"));
+	memcpy((void *)str_orig, "blobmobile !", strlen("blobmobile !"));
 
-	ft_memcpy((void *)str, "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", 40);
-	memcpy((void *)str_orig, "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", 40);
-	ft_memcpy((void *)str, "Hello wayne's world", 30);
-	memcpy((void *)str_orig, "Hello wayne's world", 30);
-	while(i < 60)
-		i++;
-	if(str[i] == str_orig[i])
+	if(!memcmp(str, str_orig, strlen("blobmobile !")))
 	{
 		TEST(1, "OK");
 	}
 	else
-		TEST(1,"FALSE : diff :(");
-	ft_memcpy((void *)str, "Marilou", 5);
-	memcpy((void *)str_orig, "Marilou", 5);
-	i = 0;
-	while(i < 60)
-		i++;
-	if(str[i] == str_orig[i])
+		TEST(1, "FALSE : simple first test.... bad diff");
+
+
+	//---------------test 2 end with \0 with n = nb char (no \0)
+	ft_memcpy((void *)str, "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", 40);
+	memcpy((void *)str_orig, "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", 40);
+	ft_memcpy((void *)str, "Hello wayne's world", 19);
+	memcpy((void *)str_orig, "Hello wayne's world", 19);
+	if(!memcmp(str, str_orig, 22))
 	{
 		TEST(2, "OK");
 	}
 	else
 		TEST(2,"FALSE : diff :(");
+
+	//---------------test 3 end with \0 with n = nb char + 1 (yes \0)
+	ft_memcpy((void *)str, "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", 40);
+	memcpy((void *)str_orig, "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", 40);
+	ft_memcpy((void *)str, "Hello wayne's world", 20);
+	memcpy((void *)str_orig, "Hello wayne's world", 20);
+	if(!memcmp(str, str_orig, 22))
+	{
+		TEST(3, "OK");
+	}
+	else
+		TEST(3,"FALSE : diff :(");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 16:00:10 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/12 16:43:32 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/23 14:19:12 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,6 @@ int main(void)
 	}
 	else
 		TEST(6, "FALSE : Bip Bip et coyote, bad diff in return :(");
-
 
 	return (0);
 }

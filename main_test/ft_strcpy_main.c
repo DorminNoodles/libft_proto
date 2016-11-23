@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 17:24:00 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/10 19:46:01 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/22 16:20:36 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,22 @@ int main(void)
 	}
 	else
 		TEST(4, "FALSE : il doit segfault :)");
+
+	//-------------------- test 5 \0
+
+	str = (char *)malloc(sizeof(char) * 150);
+		MALLOC_CHECK(str);
+	dest = (char *)malloc(sizeof(char) * 150);
+		MALLOC_CHECK(dest);
+
+	memcpy(str, "Roucool\0Roucoups", strlen("Roucool\0Roucoups"));
+		ft_strcpy(dest, str);
+
+	if (dest[9] != 'R')
+	{
+		TEST(5, "OK");
+	}
+	else
+		TEST(5, "FALSE : dont copy after \0");
+
 }

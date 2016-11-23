@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 12:14:00 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/17 14:08:53 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/22 12:56:34 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int main(void)
 	//char **dest_orig;
 	char c;
 	int i;
+
+	printf("<-----ft_strsplit----->\n");
 	//-------------------------test 1 simple diff
 	i = 0;
 	c = '*';

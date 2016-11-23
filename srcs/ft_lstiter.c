@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 00:33:12 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/13 11:08:16 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/19 19:06:11 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	if (lst->next != NULL)
-		ft_lstiter(lst->next, f);
-	(*f)(lst);
+	if (lst != NULL && f != NULL)
+	{
+		if (lst->next != NULL)
+			ft_lstiter(lst->next, f);
+		(*f)(lst);
+	}
 }

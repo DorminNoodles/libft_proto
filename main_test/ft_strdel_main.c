@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdel_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/06 11:25:41 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/23 12:20:36 by lchety           ###   ########.fr       */
+/*   Created: 2016/11/22 16:21:21 by lchety            #+#    #+#             */
+/*   Updated: 2016/11/22 18:42:19 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libido.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+int main(void)
 {
-	size_t i;
+	char *str;
+	printf("<-----ft_strdel----->\n");
 
-	i = strlen(dst);
-	dst += i;
-	while (i < size && *src != '\0')
+	str = (void *)malloc(sizeof(char) * 150);
+	memcpy(str, "Saperlipopette\0", strlen("Saperlipopette") + 1);
+
+	ft_strdel(&str);
+
+	if (str == NULL)
 	{
-		*(dst++) = *src;
-		src++;
-		i++;
+		TEST(1, "OK");
 	}
-	*dst  = '\0';
+	else
+		TEST(1, "FALSE : no null");
 
-		return (i);
+	return (0);
 }

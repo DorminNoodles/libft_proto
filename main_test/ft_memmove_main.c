@@ -75,20 +75,6 @@ int main(void)
 	ft_memmove(dest, src, 17);
 
 	i = 0;
-	while (i < 20)
-	{
-		write(1, &dest_orig[i], 1);
-		i++;
-	}
-	printf("\n");
-	i = 0;
-	while (i < 20)
-	{
-		write(1, &dest[i], 1);
-		i++;
-	}
-	printf("\n");
-	i = 0;
 	while(i < 20 && dest[i] == dest_orig[i])
 		i++;
 	if (i == 20)
@@ -112,8 +98,15 @@ int main(void)
 	memmove(dest_orig, src_orig, 5);
 	ft_memmove(dest, src, 5);
 
-	printf("orig : %s\n", dest_orig);
-	printf("mut : %s\n", dest);
+	if(memcmp(src, src_orig, 10) == 0)
+	{
+		TEST(4, "OK");
+	}
+	else
+		TEST(4, "FALSE : diff");
+
+	//printf("orig : %s\n", dest_orig);
+	//printf("mut : %s\n", dest);
 	
 	
 	return (0);

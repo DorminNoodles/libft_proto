@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/06 11:25:41 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/23 12:20:36 by lchety           ###   ########.fr       */
+/*   Created: 2016/11/20 17:01:15 by lchety            #+#    #+#             */
+/*   Updated: 2016/11/20 18:04:45 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libido.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+int main(void)
 {
-	size_t i;
+	printf("<-----ft_putchar----->\n");
+	//--------------test 1
+	ft_putchar('T');
+	ft_putchar('e');
+	ft_putchar('s');
+	ft_putchar('t');
+	ft_putchar(' ');
+	ft_putchar('1');
+	ft_putchar(' ');
+	ft_putchar('O');
+	ft_putchar('K');
+	ft_putchar('\n');
 
-	i = strlen(dst);
-	dst += i;
-	while (i < size && *src != '\0')
-	{
-		*(dst++) = *src;
-		src++;
-		i++;
-	}
-	*dst  = '\0';
 
-		return (i);
+	return (0);
 }

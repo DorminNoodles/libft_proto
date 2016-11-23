@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/06 11:25:41 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/23 12:20:36 by lchety           ###   ########.fr       */
+/*   Created: 2016/11/20 20:13:44 by lchety            #+#    #+#             */
+/*   Updated: 2016/11/20 20:17:49 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libido.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+int main(void)
 {
-	size_t i;
-
-	i = strlen(dst);
-	dst += i;
-	while (i < size && *src != '\0')
-	{
-		*(dst++) = *src;
-		src++;
-		i++;
-	}
-	*dst  = '\0';
-
-		return (i);
+	printf("<-----ft_putendl----->\n");
+	ft_putendl("Test 1 OK");
+	return (0);
 }

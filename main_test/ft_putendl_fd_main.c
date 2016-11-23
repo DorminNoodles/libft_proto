@@ -1,46 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen_main.c                                   :+:      :+:    :+:   */
+/*   ft_putendl_fd_main.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 13:28:14 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/23 12:27:59 by lchety           ###   ########.fr       */
+/*   Created: 2016/11/20 20:18:34 by lchety            #+#    #+#             */
+/*   Updated: 2016/11/21 11:44:24 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libido.h"
 
-int		main(void)
+int main(void)
 {
-	char *str;
-    printf("<-----ft_strlen----->\n");
-	str = (char *)malloc(150);
-		MALLOC_CHECK(str);
+	int file;
+	char buf[500];
 
-	ft_memcpy((void *)str, "Violon Metal Gear Metal Mario", 28);
+	printf("<-----ft_putendl_fd----->\n");
+	file = open("ft_putendl_fd.txt", O_RDWR | O_CREAT, S_IRWXU | S_IRWXG | S_IRWXO);
 
-	if (strlen(str) == ft_strlen(str))
+	ft_putendl_fd("Test 1 OK", file);
+	close(file);
+
+	file = open("ft_putendl_fd.txt", O_RDONLY);
+	
+	read(file, (void *)buf, 500);
+	//printf("%s", buf);
+
+	if (!strcmp(buf, "Test 1 OK\n"))
 	{
 		TEST(1, "OK");
 	}
 	else
-	{
-		TEST(1, "FALSE : diff :(");
-	}
+		TEST(1, "FALSE : O_O");
 
-	//------------------ test 2
-	ft_memcpy((void *)str, "", 0);
-
-	if (strlen(str) == ft_strlen(str))
-	{
-		TEST(2, "OK");
-	}
-	else
-	{
-		TEST(2, "FALSE : empty string");
-	}
-	return (0);
+	close(file);	
+	return (0);	
 }
