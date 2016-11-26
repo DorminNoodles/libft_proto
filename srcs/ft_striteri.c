@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 21:13:05 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/13 16:45:08 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/25 09:58:44 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 
 	i = 0;
 	while (s[i])
-		(*f)(i++, s);
+	{
+		(*f)(i, (s + i));
+		i++;
+	}
 }
+
+
+//j envoi la chaine string + l index au lieu d envoyer le character + i

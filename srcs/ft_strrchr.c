@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 12:00:14 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/22 12:46:47 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/23 20:58:19 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 			str = (char *)s;
 		s++;
 	}
+	if (!c && str == '\0')
+		str = (char *)s;
 	return (str);
 }

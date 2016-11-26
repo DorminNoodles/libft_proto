@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 14:04:04 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/17 13:33:30 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/23 21:20:27 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char			**ft_strsplit(char const *s, char c)
 	i = 0;
 	nb_w = 0;
 	j = 0;
-	tab = (char**)malloc(sizeof(char*) * count_words(s, c) + 1);
+	tab = (char**)malloc(sizeof(char *) * count_words(s, c) + 1);
 	if (tab == NULL)
 		return (NULL);
 
