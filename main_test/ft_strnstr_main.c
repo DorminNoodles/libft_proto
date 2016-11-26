@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 18:19:42 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/23 19:25:17 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/24 19:01:45 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main(void)
 	char *haystack;
 	char *needle;
 	char *ret;
+	char *ret_orig;
 
 	printf("<-----ft_strnstr----->\n");
 	haystack = (char *)malloc(sizeof(char) * 150);
@@ -67,24 +68,114 @@ int main(void)
 		TEST(4, "OK");
 	}
 	else
-		TEST(4, "FALSE : n too short for find and it find something.... or no return NULL");
+		TEST(4, "FALSE : nothing find but it should be");
 	
 	//-------------- n second test
 	memcpy(haystack, "Kodak est mort\0", ft_strlen("Kodak est mort") + 1);
 	memcpy(needle, "est", ft_strlen("est"));
 	ret = ft_strnstr(haystack, needle, 9);
+	ret_orig = strnstr(haystack, needle, 9);
 
-	if (ret == haystack + 6)
+	//printf("%s\n", ret);
+	//printf("%s\n", ret_orig);
+
+	if (!strcmp(ret, ret_orig))
 	{
 		TEST(5, "OK");
 	}
 	else
 		TEST(5, "FALSE : n should find something and it doesnt");
 
-	//-------------- test
 
+	//-------------- test n == 1
+	memcpy(haystack, "Kodak est mort\0", ft_strlen("Kodak est mort") + 1);
+	memcpy(needle, "Ko\0", ft_strlen("Ko") + 1);
+	ret = ft_strnstr(haystack, needle, 1);
+	ret_orig = strnstr(haystack, needle, 1);
 
+	if (ret == ret_orig)
+	{
+		TEST(6, "OK");
+	}
+	else
+		TEST(6, "FALSE : n should find something and it doesnt");
 
+	//------------test 7 for fun
+	memcpy(haystack, "moulinex moulinette crevette\0", strlen("moulinex moulinette crevette") + 1 );
+	memcpy(needle, "crevette\0", strlen("crevette") + 1);
+	ret = ft_strnstr(haystack, needle, ft_strlen(haystack));
+	ret_orig = strnstr(haystack, needle, strlen(haystack));
+
+	//printf("%s\n", ret);
+	//printf("%s\n", ret_orig);
+	
+	if (ret == ret_orig)
+	{
+		TEST(7, "OK");
+	}
+	else
+		TEST(7, "FALSE : last word, last letter");
+
+	//----------------- test 8 multiple
+	memcpy(haystack, "cafe cafe cafe cafe cafe cafe\0", strlen("cafe cafe cafe cafe cafe cafe") + 1 );
+	memcpy(needle, "cafe\0", strlen("cafe") + 1);
+	ret = ft_strnstr(haystack, needle, ft_strlen(haystack));
+	ret_orig = strnstr(haystack, needle, strlen(haystack));
+
+	//printf("%p\n", ret);
+	//printf("%p\n", ret_orig);
+	
+	if (ret == ret_orig)
+	{
+		TEST(8, "OK");
+	}
+	else
+		TEST(8, "FALSE : bad with multiple match");
+
+	//--------------------- test 9
+	memcpy(haystack, "czzzaazfzfzez\0", strlen("czzzaazfzfzez") + 1 );
+	memcpy(needle, "cafe\0", strlen("cafe") + 1);
+	ret = ft_strnstr(haystack, needle, ft_strlen(haystack));
+	ret_orig = strnstr(haystack, needle, strlen(haystack));
+
+	//printf("%p\n", ret);
+	//printf("%p\n", ret_orig);
+	
+	if (ret == ret_orig)
+	{
+		TEST(9, "OK");
+	}
+	else
+		TEST(9, "FALSE : regarder le code");
+	
+	
 
 	return (0);
 }
+
+
+/*
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t i;
+
+	i = 0;
+	len++;
+	while (*haystack && len != 0)
+	{
+		printf("%d\n", (int)i);
+		if (needle[i] == '\0' || i == ft_strlen(needle))
+		{
+			printf("%s\n", haystack);
+			return ((char *)haystack - (int)ft_strlen(needle));
+		}
+		if (*haystack != needle[i])
+			i = 0;
+		else
+			i++;
+		haystack++;
+		len--;
+	}
+	return (NULL);
+}
+*/

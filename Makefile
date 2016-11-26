@@ -19,20 +19,53 @@ ALLTEST = 	test_ft_atoi\
 			test_ft_lstadd\
 			test_ft_lstdel\
 			test_ft_lstiter\
-			test_ft_memset\
+			test_ft_lstdelone\
+			test_ft_lstmap\
+			test_ft_lstnew\
+			test_ft_memalloc\
 			test_ft_memcpy\
 			test_ft_memccpy\
+			test_ft_memdel\
 			test_ft_memmove\
 			test_ft_memchr\
 			test_ft_memcmp\
-			test_ft_strlen\
+			test_ft_memset\
+			test_ft_putchar\
+			test_ft_putchar_fd\
+			test_ft_putendl\
+			test_ft_putendl_fd\
+			test_ft_putnbr\
 			test_ft_strdup\
-			test_ft_strcpy\
-			test_ft_strncpy\
+			test_ft_putnbr_fd\
+			test_ft_putstr\
+			test_ft_putstr_fd\
 			test_ft_strcat\
-			test_ft_strncat\
+			test_ft_strchr\
+			test_ft_strclr\
+			test_ft_strcmp\
+			test_ft_strcpy\
+			test_ft_strdel\
+			test_ft_strequ\
+			test_ft_striter\
+			test_ft_striteri\
+			test_ft_strjoin\
 			test_ft_strlcat\
-			#test_ft_strsplit\
+			test_ft_strlen\
+			test_ft_strmap\
+			test_ft_strmapi\
+			test_ft_strncat\
+			test_ft_strncmp\
+			test_ft_strncpy\
+			test_ft_strnequ\
+			test_ft_strnew\
+			test_ft_strnstr\
+			test_ft_strrchr\
+			test_ft_strsplit\
+			test_ft_strstr\
+			test_ft_strsub\
+			test_ft_strtrim\
+			test_ft_tolower\
+			test_ft_toupper\
 
 executer: compiler
 	@echo "/---------------------------------------------\\"
@@ -188,11 +221,6 @@ test_ft_strsplit:
 	@./tmp.out
 	@rm tmp.out
 
-test_ft_strncpy:
-	@$(CC) -o tmp.out $(MAIN_TEST)ft_strncpy_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
-	@./tmp.out
-	@rm tmp.out
-
 test_ft_strcat:
 	@$(CC) -o tmp.out $(MAIN_TEST)ft_strcat_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
 	@./tmp.out
@@ -200,11 +228,6 @@ test_ft_strcat:
 
 test_ft_strncat:
 	@$(CC) -o tmp.out $(MAIN_TEST)ft_strncat_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
-	@./tmp.out
-	@rm tmp.out
-
-test_ft_strlcat:
-	@$(CC) -o tmp.out $(MAIN_TEST)ft_strlcat_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
 	@./tmp.out
 	@rm tmp.out
 
@@ -253,7 +276,182 @@ test_ft_lstdel:
 	@./tmp.out
 	@rm tmp.out
 
+test_ft_lstdelone:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_lstdelone_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
 test_ft_lstiter:
 	@$(CC) -o tmp.out $(MAIN_TEST)ft_lstiter_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+	
+test_ft_lstmap:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_lstmap_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_lstnew:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_lstnew_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_memalloc:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_memalloc_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_memdel:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_memdel_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_putchar:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_putchar_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_putchar_fd:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_putchar_fd_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_putendl:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_putendl_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_putendl_fd:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_putendl_fd_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_putnbr:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_putnbr_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_putnbr_fd:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_putnbr_fd_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_putstr:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_putstr_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_putstr_fd:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_putstr_fd_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strchr:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strchr_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strclr:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strclr_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strcmp:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strcmp_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strdel:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strdel_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strequ:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strequ_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_striter:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_striter_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_striteri:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_striteri_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strjoin:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strjoin_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strlcat:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strlcat_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strmap:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strmap_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strmapi:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strmapi_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strncmp:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strncmp_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strncpy:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strncpy_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strnequ:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strnequ_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strnew:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strnew_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strnstr:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strnstr_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strrchr:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strrchr_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strstr:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strstr_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strsub:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strsub_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_strtrim:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_strtrim_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_tolower:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_tolower_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
+	@./tmp.out
+	@rm tmp.out
+
+test_ft_toupper:
+	@$(CC) -o tmp.out $(MAIN_TEST)ft_toupper_main.c $(SRC_LIB_TEST) $(SRC_DIR)*.c -I$(INC_DIR) -I$(INC_DIR_TEST) $(FLAGS)
 	@./tmp.out
 	@rm tmp.out

@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 20:17:05 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/13 21:54:09 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/20 14:34:14 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <string.h>
 # include <fcntl.h>
 # include <stdlib.h>
+# define MALLOC_CTRL(ptr)	if(ptr == NULL) 		\
+								return (0);
 
 struct		s_list
 {

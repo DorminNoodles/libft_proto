@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri_main.c                                 :+:      :+:    :+:   */
+/*   ft_tolower_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/22 19:31:23 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/25 10:01:50 by lchety           ###   ########.fr       */
+/*   Created: 2016/11/26 15:25:32 by lchety            #+#    #+#             */
+/*   Updated: 2016/11/26 15:37:30 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libido.h"
 
-static void test_striteri(unsigned int n, char *s)
-{
-	*s = *s + n;
-}
-
 int main(void)
 {
 	char *str;
+	int i;
 
-	str = (char *)malloc(sizeof(char) * 150);
+	i = 0;
+	str = (char *)malloc(sizeof(char) * 250);
 		MALLOC_CHECK(str);
-	printf("<-----ft_striteri----->\n");	
-	memcpy(str, "000000000\0", ft_strlen("000000000") + 1);
-	ft_striteri(str, &test_striteri);
 
-	//printf("%s", str);
+	printf("<-----ft_tolower----->\n");
+	strcpy(str, "!#@@#$5AA435euAAjufrjIDHHefjeLLOKNBw45675ur7hf)()(*(^^))");
+	while (*(str + i) != 0)
+	{
+		*(str + i) = ft_tolower(*(str + i));
+		i++;
+	}
 
-	if (!strcmp(str, "012345678"))
+	if (!strcmp( str, "!#@@#$5aa435euaajufrjidhhefjelloknbw45675ur7hf)()(*(^^))"))
 	{
 		TEST(1, "OK");
 	}
 	else
-		TEST(1, "FALSE : bad bad bad....");
+		TEST(1, "FALSE : test standard failure");
+
+	//printf("%s", str);
 	return (0);
 }

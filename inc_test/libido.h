@@ -19,7 +19,7 @@
 								do_malloc_failed(); \
 								return (0);			\
 							}
-
+#define DEBUG printf("In function :%s ON line : %d\n", __func__, __LINE__);
 #include <string.h>
 #include <stdio.h>
 #include "libft.h"

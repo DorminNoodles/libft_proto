@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 12:14:00 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/22 12:56:34 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/26 15:43:13 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,7 @@ int main(void)
 		MALLOC_CHECK(str1);
 	memcpy(str1, "*bordel***pouet***pouet***prometheus****\0", strlen("*bordel***pouet***pouet***prometheus****") + 1);
 	dest = ft_strsplit(str1, c);
-	
-	if (*(dest + 5) != NULL)
-		printf("A : %s \n", *(dest + 4));
-	while (*(dest + i) != NULL)
-	{
-		printf("%s\n", *(dest + i));
-		i++;
-	}
+
 
 	if (memcmp(dest[0], "bordel", 6) == 0 && memcmp(dest[1], "pouet", 5) == 0 &&
 		memcmp(dest[2], "pouet", 5) == 0 && memcmp(dest[1], "prometheus", 10))
