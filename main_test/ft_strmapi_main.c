@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 13:11:27 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/23 14:05:42 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/26 17:13:08 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,5 @@ int main(void)
 	}
 	else
 		TEST(1, "FALSE : bad bad bad");
-
-	//---------------- test 2 str NULL
-	ret = ft_strmapi(NULL, &test_strmapi);
-
-	TEST(2, "OK");
-
-	//---------------- test 3 f NULL
-	ret = ft_strmapi("chocapic\0", NULL);
-
-	TEST(3, "OK");
-
 	return (0);
 }

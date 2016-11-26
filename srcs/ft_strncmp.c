@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 10:07:52 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/13 16:49:02 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/26 17:51:59 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,17 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+
+	if (s1 && s2 && n)
+	{
+		if (n > ft_strlen(s1) && n > ft_strlen(s2))
+		{
+			if (ft_strlen(s1) > ft_strlen(s2))
+				n = ft_strlen(s1);
+			else
+				n = ft_strlen(s2);
+		}
+	}
+
 	return (ft_memcmp(s1, s2, n));
 }

@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 21:39:57 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/23 13:01:22 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/26 17:11:15 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	size_t	i;
 
 	i = 0;
-	if (s == NULL || f == NULL)
-		return (0);
-
 	dest = ft_strnew(ft_strlen(s));
 	while (*s)
 	{

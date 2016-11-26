@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 20:17:05 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/20 14:34:14 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/26 17:05:50 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <string.h>
-# include <fcntl.h>
 # include <stdlib.h>
 # define MALLOC_CTRL(ptr)	if(ptr == NULL) 		\
 								return (0);

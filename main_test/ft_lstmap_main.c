@@ -6,13 +6,13 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/20 11:50:05 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/26 12:21:54 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/26 17:02:31 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libido.h"
-
+/*
 static t_list *acme(t_list *elem)
 {
 	char *temp;
@@ -25,9 +25,10 @@ static t_list *acme(t_list *elem)
 	temp[0] = 'A';
 	return (new);
 }
-
+*/
 int main(void)
 {
+	/*
 	printf("<-----ft_lstmap----->\n");
 	t_list *porcinet;
 	t_list *vost;
@@ -56,5 +57,6 @@ int main(void)
 	}
 	else
 		TEST(2, "FALSE : bad diff");
-	return (0);	
+	*/
+	return (0);
 }

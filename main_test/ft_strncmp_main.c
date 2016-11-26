@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 14:06:59 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/22 15:27:48 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/26 17:52:55 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,22 @@ int main(void)
 	}
 	else
 		TEST(12, "FALSE : str1 < in ascii");
+
+	//----------------- test 13 
+	char *ztr1 = "hello World !  \0 owned";
+	char *ztr2 = "hello World !  \0 pwned";
+	int z = 100;
+
+	// printf("%d\n", strncmp(ztr1, ztr2, z));
+	// printf("%d\n", ft_strncmp(ztr1, ztr2, z));
+
+	if (strncmp(ztr1, ztr2, z) == ft_strncmp(ztr1, ztr2, z))
+	{
+		TEST(13, "OK");
+	}
+	else
+		TEST(13, "FALSE : hello World !  \\0 owned not return 0");
+
 
 	return (0);
 }

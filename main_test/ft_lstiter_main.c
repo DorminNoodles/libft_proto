@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 14:01:59 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/20 11:47:46 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/26 16:57:26 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,6 @@ int main(void)
 	}
 	else
 		TEST(3, "FALSE : bad diff");
-	
-	//---------------------- test 4 list NULL
-	ft_lstiter(NULL, f);
-	TEST(4, "OK");
-
-	//---------------------- test 5 *f NULL
-	ft_lstiter(masterchief, NULL);
-	TEST(5, "OK");
 
 	return (0);
 }

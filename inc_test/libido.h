@@ -23,6 +23,9 @@
 #include <string.h>
 #include <stdio.h>
 #include "libft.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 
 void do_malloc_failed(void);
