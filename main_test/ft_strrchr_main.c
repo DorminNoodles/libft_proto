@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 19:06:44 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/30 22:03:28 by lchety           ###   ########.fr       */
+/*   Updated: 2016/12/01 03:07:22 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,13 @@ int main(void)
     if (tab + 7 != ft_strrchr(tab, '\0'))
         printf("ERROR4\n");
 
-		printf("%s\n", tab + 7);
-		printf("%s\n", ft_strrchr(tab, '\0'));
-		printf("%s\n", strrchr(tab, '\0'));
+		// printf("%s\n", tab + 7);
+		// printf("%s\n", ft_strrchr(tab, '\0'));
+		// printf("%s\n", strrchr(tab, '\0'));
 
-		printf("%s\n", tab + 7);
-		printf("%s\n", ft_strrchr(tab, '\0' | 0xff00));
-		printf("%s\n", strrchr(tab, '\0' | 0xff00));
+		// printf("%s\n", tab + 7);
+		// printf("%s\n", ft_strrchr(tab, '\0' | 0xff00));
+		// printf("%s\n", strrchr(tab, '\0' | 0xff00));
 
     if (tab + 7 != ft_strrchr(tab, '\0' | 0xff00))
         printf("ERROR5\n");

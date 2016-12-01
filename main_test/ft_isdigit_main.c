@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 10:35:41 by lchety            #+#    #+#             */
-/*   Updated: 2016/12/01 03:03:26 by lchety           ###   ########.fr       */
+/*   Updated: 2016/12/01 03:08:10 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main(void)
 	{
 		if (ft_isdigit(alpha) != isdigit(alpha))
 		{
-			printf("%d\n", alpha);
+			//printf("%d\n", alpha);
 			error = 1;
 		}
 		alpha++;
