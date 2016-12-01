@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:09:30 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/20 18:24:21 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 15:05:47 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,6 +218,15 @@ int main(void)
 
 	//printf("%d\n", ret_orig);
 	//printf("%d\n", ret);
+	
+	//--------------------- test 14
+	printf("%d\n", ft_memcmp("testss", "test", 7));
+	if(ft_memcmp("testss", "test", 7) == memcmp("testss", "test", 7))
+	{
+		TEST(14, "OK");
+	}
+	else
+		TEST(14, "FALSE : ");
 	
 	return (0);
 }

@@ -6,16 +6,16 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 19:31:23 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/25 10:01:50 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 17:51:48 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libido.h"
 
-static void test_striteri(unsigned int n, char *s)
+static void test_striteri(unsigned int n, char *c)
 {
-	*s = *s + n;
+	*c = *c + n;
 }
 
 int main(void)

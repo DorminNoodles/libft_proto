@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 00:26:53 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/13 16:50:32 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 15:32:51 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	while (*s1 && n > 0)
+	while ((*s1 || *s2) && n > 0)
 	{
 		if (*s1++ != *s2++)
 			return (0);

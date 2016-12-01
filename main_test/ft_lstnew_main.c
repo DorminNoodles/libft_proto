@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/20 14:07:18 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/20 18:10:56 by lchety           ###   ########.fr       */
+/*   Updated: 2016/12/01 03:04:43 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,26 @@ int main(void)
 	//------------- test 4 size 0
 	ft_lstnew("Fernand", 0);
 	TEST(4, "OK");
+
+
+	//------------- test 5
+
+	t_list *begin;
+	size_t v;
+
+	v = 1;
+
+	begin = ft_lstnew(NULL, 36);
+	if (begin != 0 && (begin->content_size != 0 || begin->content != NULL))
+	{
+		TEST(5, "FALSE");
+	}
+	else
+	{
+		TEST(5, "OK");
+	}
+	free(begin);
+	
 	return (0);
+	
 }

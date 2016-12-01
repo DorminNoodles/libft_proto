@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 18:45:54 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/22 18:57:24 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 17:53:45 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,13 @@ int main(void)
 	else
 		TEST(4, "FALSE : bad return str 1 more short");
 
-
+	//---------------- test 5 test tests
+	if (ft_strequ("test", "tests") == 0)
+	{
+		TEST(5, "OK");
+	}
+	else
+		TEST(5, "FALSE : bad return str 1 more short");
 
 	return (0);
 }

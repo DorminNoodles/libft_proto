@@ -6,7 +6,6 @@ INC_DIR = includes/
 INC_DIR_TEST = inc_test/
 SRC_LIB_TEST = src_lib_test/libido.c
 FLAGS = -Wall -Wextra -Werror
-
 MAIN_TEST = main_test/
 SRC_TEST = src_test/
 ALLTEST = 	test_ft_atoi\
@@ -115,7 +114,7 @@ check_file:
 	@[ -f $(SRC_DIR)ft_isprint.c ] && echo -e "ft_isprint\tOK" || echo -e "ft_isprint\tFALSE"
 	@[ -f $(SRC_DIR)ft_toupper.c ] && echo -e "ft_toupper\tOK" || echo -e "ft_toupper\tFALSE"
 	@[ -f $(SRC_DIR)ft_tolower.c ] && echo -e "ft_tolower\tOK" || echo -e "ft_tolower\tFALSE"
-	@echo "/---------------------------------------------\"
+	@echo "/---------------------------------------------\\"
 	@echo "- PART TWO -"
 	@echo "\---------------------------------------------/"
 	@[ -f $(SRC_DIR)ft_memalloc.c ] && echo -e "ft_memalloc\t : OK" || echo "ft_memalloc\t : FALSE"
@@ -143,14 +142,6 @@ check_file:
 	@[ -f $(SRC_DIR)ft_putendl_fd.c ] && echo -e "ft_putendl_fd\t : OK" || echo "ft_putendl_fd\t : FALSE"
 	@[ -f $(SRC_DIR)ft_putnbr_fd.c ] && echo -e "ft_putnbr_fd\t : OK" || echo "ft_putnbr_fd\t : FALSE"
 	@[ -f $(SRC_DIR)ft_putstr_fd.c ] && echo -e "ft_putstr_fd\t : OK" || echo "ft_putstr_fd\t : FALSE"
-	@[ -f $(SRC_DIR)ft_putstr_fd.c ] && echo -e "ft_putstr_fd\t : OK" || echo "ft_putstr_fd\t : FALSE"
-	@[ -f $(SRC_DIR)ft_putstr_fd.c ] && echo -e "ft_putstr_fd\t : OK" || echo "ft_putstr_fd\t : FALSE"
-	@[ -f $(SRC_DIR)ft_putstr_fd.c ] && echo -e "ft_putstr_fd\t : OK" || echo "ft_putstr_fd\t : FALSE"
-	
-	
-	
-	
-	
 	@echo "/---------------------------------------------\\"
 	@echo "- PART BONUS -"
 	@echo "\---------------------------------------------/"
@@ -163,7 +154,7 @@ check_file:
 	@echo "/---------------------------------------------\\"
 	@echo "- END -"
 	@echo "\---------------------------------------------/"
-	
+
 test_all: $(ALLTEST)
 
 test_ft_memset:

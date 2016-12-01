@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 00:15:06 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/13 16:41:11 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 21:02:03 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	while (*s1)
+	while (*s1 || *s2)
 	{
 		if (*s1++ != *s2++)
 			return (0);

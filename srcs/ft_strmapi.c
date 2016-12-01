@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 23:27:33 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/26 17:13:26 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/29 19:09:51 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	dest = ft_strnew(ft_strlen(s));
+	if (!dest)
+		return (NULL);
 	while (*s)
 	{
 		dest[i] = (*f)(i, *s);

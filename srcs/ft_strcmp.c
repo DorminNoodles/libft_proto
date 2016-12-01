@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 23:07:07 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/22 15:44:39 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/26 19:01:55 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
-	return (ft_strncmp(s1, s2, ft_strlen(s1) + 1));
+	return (ft_strncmp(s1, s2, ft_strlen(s2) + 1));
 }

@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 11:03:04 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/26 15:52:04 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/29 19:05:58 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,18 @@ char	*ft_strtrim(char const *s)
 
 	i = 0;
 	go = 0;
+	str = NULL;
 	while (s[go] == ' ' || s[go] == '\n' || s[go] == '\t')
+	{
 		go++;
-	while (s[go + i++]);
-	while (s[go + i] == ' ' || s[go + i] == '\n' || 
-		s[go + i] == '\t' || s[go + i] == '\0')
+	}
+	while (s[go + i])
+		i++;
+	while ((s[go + i] == ' ' || s[go + i] == '\n' ||
+		s[go + i] == '\t' || s[go + i] == '\0') && i)
 	{
 		i--;
 	}
 	str = ft_strsub(s, go, i + 1);
-	if (str == NULL)
-		return (NULL);
 	return (str);
 }

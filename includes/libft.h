@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 20:17:05 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/26 17:05:50 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/28 12:08:08 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
-# define MALLOC_CTRL(ptr)	if(ptr == NULL) 		\
-								return (0);
 
 struct		s_list
 {
@@ -24,6 +22,7 @@ struct		s_list
 	size_t				content_size;
 	struct s_list		*next;
 };
+
 typedef struct s_list	t_list;
 int			ft_atoi(const char *nptr);
 void		*ft_memset(void *s, int c, size_t n);

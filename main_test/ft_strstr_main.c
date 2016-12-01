@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 21:34:50 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/26 12:54:00 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 17:44:25 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main(void)
 	else
 		TEST(1, "FALSE : C est de la merde");
 	
-	//---------------- test 1
+	//---------------- test 2
 	memcpy(haystack, "moule\0", strlen("moule") + 1 );
 	memcpy(needle, "crevette au poulet\0", strlen("crevette au poulet") + 1);
 
@@ -59,6 +59,25 @@ int main(void)
 	}
 	else
 		TEST(2, "FALSE : no return NULL");
-	return (0);
+
+	//--------------- test 3
+	char	*s1 = "FGZIMBCDFGZIMBCDFGA";
+	char	*s2 = "FGZIMBCDFGA";
+
+	char	*i1 = strstr(s1, s2);
+	char	*i2 = ft_strstr(s1, s2);
+	
+	printf("orig : %s\n", i1);
+	printf("ret : %s\n", i2);
+	if (i1 == i2)
+	{
+		TEST(3, "OK");
+	}
+	else
+	{
+		TEST(3, "FALSE : bad return");
+	}
+
+	printf("%s\n", ft_strstr("looololooololl", "loll"));
 	return (0);
 }

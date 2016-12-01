@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 10:35:41 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/18 10:37:51 by lchety           ###   ########.fr       */
+/*   Updated: 2016/12/01 03:03:26 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,27 @@ int main(void)
 	}
 	else
 		TEST(1, "False : bad all ascii test");
-	
+
+	alpha = -1;
+	while (alpha < 530)
+	{
+		if (ft_isdigit(alpha) != isdigit(alpha))
+		{
+			printf("%d\n", alpha);
+			error = 1;
+		}
+		alpha++;
+	}
+
+	//printf("orig : %d\n", isdigit(304));
+	//printf("ret : %d\n", ft_isdigit(304));
+
+	if (!error)
+	{
+		TEST(2, "OK");
+	}
+	else
+		TEST(2, "FALSE : Maurice Chausson");
+
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 10:43:46 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/18 11:59:59 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 11:42:51 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,31 @@ int	main(void)
 	}
 	else
 		TEST(3, "False : bad 2147483647");
+/*
+	//--------------------test 4 \0
+	srand(clock());
+	int		n;
+	char	*d;
+
+	for (int i = 0; i < 2000; i++) 
+	{
+		n = rand();
+		d = ft_itoa(n);
+
+		if (atoi(d) != n) 
+		{
+			printf("Marche pas n = %d\n", n);
+		}
+	}
+*/
+	//------------------- test 5
+
+	printf("test = %s\n", ft_itoa(1005370));
+
+	printf("test str = %s\n", ft_itoa(0));
 
 	return (0);
 }
+
+//1053632669
+//2147483647

@@ -262,5 +262,28 @@ int main(void)
 	else
 		TEST(11, "FALSE : src null bad diff :(");
 
+	char    tab[10];
+    char    tab2[10];
+
+    if (NULL != ft_memccpy(NULL, "a", 'a', 0))
+		printf("error");
+    if (NULL != ft_memccpy(tab, "aaaaaaaaaa", 'b', 10))
+        printf("error");
+    if (0 != memcmp(tab, "aaaaaaaaaa", 10))
+        printf("error");
+    if (NULL != ft_memccpy(tab + 1, "bbbbbbbbbb", 'a', 8))
+        printf("error");
+    if (0 != memcmp(tab, "abbbbbbbba", 10))
+        printf("error");
+    strcpy(tab2, "cccccee");
+    if (tab + 8 != ft_memccpy(tab + 2, tab2, 'e', 7))
+        printf("error");
+    if (0 != memcmp(tab, "abccccceba", 10))
+        printf("error");
+    if (0 != strcmp(tab2, "cccccee"))
+        printf("error");
+
+	printf("test");
+
 	return (0);
 }

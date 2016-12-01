@@ -6,11 +6,12 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 14:04:04 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/23 21:20:27 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 13:35:44 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static size_t	count_words(char const *s, char c)
 {
 	int		i;
@@ -22,43 +23,57 @@ static size_t	count_words(char const *s, char c)
 	{
 		if (s[i] == c && s[i + 1] != c && s[i + 1])
 			n++;
+		if (s[i] != c && n == 0)
+			n++;
 		i++;
 	}
 	return (n);
 }
 
+static char		**create_tab(int n)
+{
+	char **tab;
+
+	tab = (char**)malloc(sizeof(char *) * n + 1);
+	if (tab == NULL)
+		return (NULL);
+	tab[n] = NULL;
+	return (tab);
+}
+
+static char		*add_word(char const *s, size_t n)
+{
+	char *str;
+
+	str = ft_strnew(n);
+	ft_memcpy(str, s, n);
+	return (str);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
-	size_t	i;
-	size_t	nb_w;
-	size_t	temp;
-	size_t	j;
+	int		i;
+	int		nb_w;
 
-	i = 0;
 	nb_w = 0;
-	j = 0;
-	tab = (char**)malloc(sizeof(char *) * count_words(s, c) + 1);
-	if (tab == NULL)
+	tab = create_tab(count_words(s, c));
+	if (!tab)
 		return (NULL);
-
-	while (count_words(s, c) > j)
+	while (*s)
 	{
-		temp = 0;
-		while (s[i] == c)
-			i++;
-		while (s[i] != '\0' && s[i] != c)
+		i = 0;
+		while (*s == c)
+			s++;
+		while (*s != c && *s)
 		{
 			i++;
-			temp++;
+			s++;
 		}
-		tab[j] = ft_strnew(temp);
-		if (tab[j] == NULL)
-			return (NULL);
-		ft_memcpy(tab[j], &s[i - temp], temp);
-		nb_w--;
-		j++;
+		if (i)
+			tab[nb_w++] = add_word(s - i, i);
+		if (*s)
+			s++;
 	}
-	tab[j] = NULL;
 	return (tab);
 }

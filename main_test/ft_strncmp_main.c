@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 14:06:59 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/26 17:52:55 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 15:07:03 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,16 @@ int main(void)
 	}
 	else
 		TEST(13, "FALSE : hello World !  \\0 owned not return 0");
+
+	//--------------- test 14
+	printf("%d\n", ft_strncmp("testss", "test", 7));
+	if(ft_strncmp("testss", "test", 7) == strncmp("testss", "test", 7))
+	{
+		TEST(14, "OK");
+	}
+	else
+		TEST(14, "FALSE : ");
+
 
 
 	return (0);

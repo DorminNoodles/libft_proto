@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 13:54:55 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/22 20:05:37 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/26 19:01:14 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int main(void)
 		TEST(4, "OK");
 	}
 	else
-		TEST(4, "FALSE : str2 == \0 bad diff");
+		TEST(4, "FALSE : str2 == \\0 bad diff");
 
 	//----------------- test 5 str 1 = \0
 	memcpy(str1, "\0", strlen("\0") + 1);

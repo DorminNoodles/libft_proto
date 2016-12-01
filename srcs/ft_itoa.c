@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 19:58:41 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/13 11:05:14 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 13:37:52 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static int		ft_digit_quantity(unsigned int n)
 {
 	int ret;
 
-	ret = 0;
-	while (n > 0)
+	ret = 1;
+	while (n >= 10)
 	{
 		n = n / 10;
 		ret++;
@@ -37,7 +37,7 @@ static char		*create_str(char *str, int neg, unsigned int nb)
 
 static char		*recursive_itoa(char *str, unsigned int nb)
 {
-	if (nb > 10)
+	if (nb >= 10)
 	{
 		str = recursive_itoa(str, nb / 10);
 		str = recursive_itoa(str + 1, nb % 10);

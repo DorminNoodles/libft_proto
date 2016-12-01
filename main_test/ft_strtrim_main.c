@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 21:34:49 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/26 15:50:06 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/29 18:50:02 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,23 @@ int main(void)
 	}
 	else
 		TEST(2, "FALSE : test standard bad diff");
+
+	//----------------- test 3
+	str2 = (char *)malloc(sizeof(char) * 200);
+		MALLOC_CHECK(str2);	
+	memcpy(str2, "\t\n  ", strlen("\t\n  "));
+	ret = ft_strtrim(str2);
+	printf("%s .0\n", ret);
+
+	if (!strcmp(ret, ""))
+	{
+		TEST(3, "OK");
+	}
+	else
+		TEST(3, "FALSE : test standard bad diff");
+
+	//---------------- test 4	
+
 
 	return (0);
 }

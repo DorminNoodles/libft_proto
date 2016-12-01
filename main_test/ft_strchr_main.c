@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 13:28:09 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/22 19:05:18 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 21:39:21 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,68 @@ int main(void)
 	else
 		TEST(4, "FALSE : if c == 0 return first \0");
 
+    char    tab[10];
+
+    strcpy(tab, "bonbons");
+    if (tab != ft_strchr(tab, 'b'))
+        printf("ERROR2");
+    if (tab + 1 != ft_strchr(tab, 'o'))
+        printf("ERROR3");
+    if (tab + 6 != ft_strchr(tab, 's'))
+        printf("ERROR4");
+    if (tab + 7 != ft_strchr(tab, '\0'))
+        printf("ERROR5");
+
+		int q;
+		q = 0xff00;
+		printf("%d\n", '\0' | 0xff00);
+		printf("%p\n", ft_strchr(tab, '\0' | 0xff00));
+		printf("%p\n", tab +7);
+
+	if (tab + 7 != ft_strchr(tab, '\200'))
+        printf("ERROR6\n");
+	if (tab + 7 != strchr(tab, '\200'))
+        printf("ERROR6 ORIG\n");
+
+
+    if (tab + 7 != ft_strchr(tab, '\0' | 0xff00))
+        printf("ERROR7\n");
+
+	if (NULL != ft_strchr(tab, 'a'))
+        printf("ERROR8");
+    if (tab + 2 != ft_strchr(tab, 'n' | 0xff00))
+        printf("ERROR9");
+    if (0 != memcmp(tab, "bonbons", 8))
+        printf("ERROR10");
+
+
+/*
+		strcpy(tab, "bonbons");
+    if (tab != strchr(tab, 'b'))
+        printf("ERROR2");
+    if (tab + 1 != strchr(tab, 'o'))
+        printf("ERROR3");
+    if (tab + 6 != strchr(tab, 's'))
+        printf("ERROR4");
+    if (tab + 7 != strchr(tab, '\0'))
+        printf("ERROR5");
+
+		int q;
+		q = 0xff00;
+		printf("%d\n", '\0' | 0xff00);
+
+	if (tab + 7 != strchr(tab, '\200'))
+        printf("ERROR6");
+
+    if (tab + 7 != strchr(tab, '\0' | 0xff00))
+        printf("ERROR7");
+    
+	if (NULL != strchr(tab, 'a'))
+        printf("ERROR8");
+    if (tab + 2 != strchr(tab, 'n' | 0xff00))
+        printf("ERROR9");
+    if (0 != memcmp(tab, "bonbons", 8))
+        printf("ERROR10");
+*/
 	return (0);
 }

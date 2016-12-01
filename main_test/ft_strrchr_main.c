@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 19:06:44 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/23 21:04:50 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 22:03:28 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,38 @@ int main(void)
 	}
 	else
 		TEST(4, "FALSE : Null str prob");
+
+	//-------------- test 5
+	char    tab[10];
+		
+	    strcpy(tab, "Bonbons");
+    if (tab + 3 != ft_strrchr(tab, 'b'))
+        printf("ERROR1");
+    if (tab + 4 != ft_strrchr(tab, 'o'))
+        printf("ERROR2");
+    if (tab + 6 != ft_strrchr(tab, 's'))
+        printf("ERROR3");
+    if (tab + 7 != ft_strrchr(tab, '\0'))
+        printf("ERROR4\n");
+
+		printf("%s\n", tab + 7);
+		printf("%s\n", ft_strrchr(tab, '\0'));
+		printf("%s\n", strrchr(tab, '\0'));
+
+		printf("%s\n", tab + 7);
+		printf("%s\n", ft_strrchr(tab, '\0' | 0xff00));
+		printf("%s\n", strrchr(tab, '\0' | 0xff00));
+
+    if (tab + 7 != ft_strrchr(tab, '\0' | 0xff00))
+        printf("ERROR5\n");
+    if (NULL != ft_strrchr(tab, 'a'))
+        printf("ERROR6");
+    if (tab + 5 != ft_strrchr(tab, 'n' | 0xff00))
+        printf("ERROR7");
+    if (tab != ft_strrchr(tab, 'B'))
+        printf("ERROR8");
+    if (0 != memcmp(tab, "Bonbons", 8))
+        printf("ERROR9");
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 11:48:42 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/22 19:02:36 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/30 17:33:52 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,22 @@ int main(void)
 	ft_putstr_8("ft : ");
 	ft_putnbr(2147483647);
 	ft_putstr_8("\n");
+
+	ft_putnbr(0);
+	ft_putstr_8("\n");
+	ft_putnbr(1);
+	ft_putstr_8("\n");
+	ft_putnbr(-1);
+	ft_putstr_8("\n");
+	ft_putnbr(12300);
+	ft_putstr_8("\n");
+	ft_putnbr(10203);
+	ft_putstr_8("\n");
+	ft_putnbr(-56);
+	ft_putstr_8("\n");
+	ft_putnbr(2147483647);
+	ft_putstr_8("\n");
+	ft_putnbr(-2147483648);
 	//printf("\n");
 
 	return (0);

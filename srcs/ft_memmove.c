@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 18:00:55 by lchety            #+#    #+#             */
-/*   Updated: 2016/11/14 16:38:52 by lchety           ###   ########.fr       */
+/*   Updated: 2016/11/28 11:48:39 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	//size_t		i;
 	char		*src_temp;
 
 	src_temp = (char *)ft_memalloc(n + 1);
